@@ -1,1 +1,1 @@
-from terenas-bot import app as application
+from terenas-application import app as application
