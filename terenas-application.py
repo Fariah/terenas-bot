@@ -10,8 +10,8 @@ def home():
 
 @app.route('/test', methods=['POST'])
 def test():
-    data = request.form.get('q')
-    return Response(data)
+    dataQ = request.form.get('q')
+    return Response(dataQ)
 
 
 if __name__ == '__main__':
