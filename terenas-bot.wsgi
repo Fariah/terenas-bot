@@ -1,0 +1,1 @@
+from terenas-bot import app as application
