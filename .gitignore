@@ -3,5 +3,4 @@ venv/
 .idea/
 node_modules/
 npm-debug.log
-flaskapp.wsgi
 settings.py
