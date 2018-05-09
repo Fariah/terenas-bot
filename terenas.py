@@ -17,6 +17,16 @@ def check(code):
     return Response('Token is invalid')
 
 
+@app.route(token, methods=['POST'])
+def bot_handler():
+    # dataQ = request.form.get('q')
+    # return Response(dataQ)
+    update_id = request.values.get('update_id')
+    message = request.values.get('message')
+    return Response('update_id:' + update_id)
+    # return Response(['update_id:' + update_id, ' message:' + message])
+
+
 @app.route(token + 'joke', methods=['POST'])
 def joke():
     # dataQ = request.form.get('q')
