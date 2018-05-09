@@ -4,3 +4,4 @@ venv/
 node_modules/
 npm-debug.log
 settings.py
+settings.pyc

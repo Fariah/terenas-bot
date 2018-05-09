@@ -18,35 +18,35 @@ def check(code):
 
 
 @app.route(token + 'joke', methods=['POST'])
-def test():
+def joke():
     # dataQ = request.form.get('q')
     # return Response(dataQ)
     return 'Joke'
 
 
 @app.route(token + 'news', methods=['POST'])
-def test():
+def news():
     # dataQ = request.form.get('q')
     # return Response(dataQ)
     return 'News'
 
 
 @app.route(token + 'hello', methods=['POST'])
-def test():
+def hello():
     # dataQ = request.form.get('q')
     # return Response(dataQ)
     return 'Hello'
 
 
 @app.route(token + 'greet', methods=['POST'])
-def test():
+def greet():
     # dataQ = request.form.get('q')
     # return Response(dataQ)
     return 'Greet El Presidente!!!'
 
 
 @app.route(token + 'birthdays', methods=['POST'])
-def test():
+def birthdays():
     # dataQ = request.form.get('q')
     # return Response(dataQ)
     return 'List of birthdays'
