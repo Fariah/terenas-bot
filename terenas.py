@@ -23,14 +23,22 @@ def bot_handler():
     content = request.get_json()
     update_id = content['update_id']
     command = content['message']['text']
+    url = 'https://api.telegram.org/bot' + bot + '/sendMessage'
     if command == '/hello':
         text = 'Hello everyone, I`m working now'
+    elif command == '/birthdays':
+        text = 'Тут будет список ДР'
+    elif command == '/greet':
+        text = 'Всякие приветствия Эль Президенте и не только'
+    elif command == '/news':
+        text = 'Новости, ну вы поняли'
+    elif command == '/joke':
+        text = 'Шутейки'
     else:
-        text = 'It`s still need to setup'
-    url = 'https://api.telegram.org/bot' + bot + '/sendMessage'
+        return Response(False)
     data = {'chat_id': '-48348130', 'text': text, 'disable_notification': 1}
     requests.post(url, data)
-    return Response(str(update_id))
+    return Response(True)
 
 
 if __name__ == '__main__':
