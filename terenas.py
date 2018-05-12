@@ -27,13 +27,13 @@ def bot_handler():
     if command == '/hello':
         text = 'Hello everyone, I`m working now'
     elif command == '/birthdays':
-        text = 'Тут будет список ДР'
+        text = 'The list of Birthdays'
     elif command == '/greet':
-        text = 'Всякие приветствия Эль Президенте и не только'
+        text = 'Greet El Presidente!!!'
     elif command == '/news':
-        text = 'Новости, ну вы поняли'
+        text = 'News news news'
     elif command == '/joke':
-        text = 'Шутейки'
+        text = 'Jokes and fun'
     else:
         return Response(False)
     data = {'chat_id': '-48348130', 'text': text, 'disable_notification': 1}
