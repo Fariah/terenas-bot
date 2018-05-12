@@ -36,7 +36,7 @@ def bot_handler():
         text = 'Greet El Presidente!!!'
     elif command == '/news':
         text = 'News news news.'
-    elif command == '/joke':
+    elif command == '\joke':
         with open(os.path.dirname(os.path.abspath(__file__)) + '\jokes.txt', 'r') as myfile:
             data = myfile.read().split('#')
         num_string = random.randint(0, 10)
