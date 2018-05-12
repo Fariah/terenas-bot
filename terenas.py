@@ -25,15 +25,15 @@ def bot_handler():
     command = content['message']['text']
     url = 'https://api.telegram.org/bot' + bot + '/sendMessage'
     if command == '/hello':
-        text = 'Hello everyone, I`m working now'
+        text = 'Hello, I`m working now.'
     elif command == '/birthdays':
-        text = 'The list of Birthdays'
+        text = 'The list of Birthdays.'
     elif command == '/greet':
         text = 'Greet El Presidente!!!'
     elif command == '/news':
-        text = 'News news news'
+        text = 'News news news.'
     elif command == '/joke':
-        text = 'Jokes and fun'
+        text = 'Jokes and funny stories'
     else:
         return Response(False)
     data = {'chat_id': chat_id, 'text': text, 'disable_notification': 1}
