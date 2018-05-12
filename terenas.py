@@ -22,8 +22,13 @@ def check(code):
 def bot_handler():
     content = request.get_json()
     update_id = content['update_id']
+    command = content['message']['text']
+    if command == '/hello':
+        text = 'Hello everyone, I`m working now'
+    else:
+        text = 'It`s still need to setup'
     url = 'https://api.telegram.org/bot' + bot + '/sendMessage'
-    data = {'chat_id': '-48348130', 'text': str(update_id), 'disable_notification': 1}
+    data = {'chat_id': '-48348130', 'text': text, 'disable_notification': 1}
     requests.post(url, data)
     return Response(str(update_id))
 
