@@ -36,7 +36,7 @@ def bot_handler():
         text = 'Greet El Presidente!!!'
     elif command == '/news':
         text = 'News news news.'
-    elif command == '\joke':
+    elif command == '/joke':
         with open(os.path.dirname(os.path.abspath(__file__)) + '\jokes.txt', 'r') as myfile:
             data = myfile.read().split('#')
         num_string = random.randint(0, 10)
@@ -44,7 +44,7 @@ def bot_handler():
     else:
         return Response(str(2))
     data = {'chat_id': chat_id, 'text': text, 'disable_notification': 1}
-    print data
+
     requests.post(url, data)
     return Response(str(3))
 
