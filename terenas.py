@@ -35,10 +35,10 @@ def bot_handler():
     elif command == '/joke':
         text = 'Jokes and funny stories'
     else:
-        return Response(False)
+        return Response(1)
     data = {'chat_id': chat_id, 'text': text, 'disable_notification': 1}
     requests.post(url, data)
-    return Response(True)
+    return Response(1)
 
 
 if __name__ == '__main__':
