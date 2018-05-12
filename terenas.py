@@ -1,6 +1,6 @@
 from flask import Flask, request
 from werkzeug.wrappers import Response
-from settings import token, bot
+from settings import token, bot, chat_id
 import requests
 
 app = Flask(__name__)
@@ -36,7 +36,7 @@ def bot_handler():
         text = 'Jokes and fun'
     else:
         return Response(False)
-    data = {'chat_id': '-48348130', 'text': text, 'disable_notification': 1}
+    data = {'chat_id': chat_id, 'text': text, 'disable_notification': 1}
     requests.post(url, data)
     return Response(True)
 
