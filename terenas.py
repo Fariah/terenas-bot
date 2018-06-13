@@ -1,10 +1,11 @@
-import os
-import random
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-
 
 from flask import Flask, request
 from werkzeug.wrappers import Response
 from settings import token, bot, chat_id
 import requests
+import joke, birthday, greet
 
 app = Flask(__name__)
 
@@ -27,22 +28,19 @@ def bot_handler():
     command = content['message']['text']
     url = 'https://api.telegram.org/bot' + bot + '/sendMessage'
     if command == '/hello':
-        text = 'Hello, I`m working now.'
+        text = 'Привет, есть че?'
     elif command == '/start':
         return Response(str(1))
     elif command == '/birthdays':
-        text = 'The list of Birthdays.'
+        text = birthday.birthdays_list()
     elif command == '/greet':
-        text = 'Greet El Presidente!!!'
+        text = greet.get_greet()
     elif command == '/news':
-        text = 'News news news.'
+        text = 'Новости всякие, разные, интересные.'
     elif command == '/joke':
-        with open(os.path.dirname(os.path.abspath(__file__)) + '/jokes.txt', 'r') as myfile:
-            data = myfile.read().split('#')
-        num_string = random.randint(0, 10)
-        text = data[num_string]
+        text = joke.get_joke()
     else:
-        return Response(str(2))
+        text = 'Ты че мне ща сказал? А ну повтори.'
     data = {'chat_id': chat_id, 'text': text, 'disable_notification': 1}
 
     requests.post(url, data)
