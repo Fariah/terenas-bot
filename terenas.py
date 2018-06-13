@@ -27,17 +27,17 @@ def bot_handler():
     content = request.get_json()
     command = content['message']['text']
     url = 'https://api.telegram.org/bot' + bot + '/sendMessage'
-    if command == '/hello':
+    if command == '/hello' or command == '/hello@terebas_bot':
         text = 'Привет, есть че?'
-    elif command == '/start':
+    elif command == '/start' or command == '/start@terebas_bot':
         return Response(str(1))
-    elif command == '/birthdays':
+    elif command == '/birthdays' or command == '/birthdays@terebas_bot':
         text = birthday.birthdays_list()
-    elif command == '/greet':
+    elif command == '/greet' or command == '/greet@terebas_bot':
         text = greet.get_greet()
-    elif command == '/news':
+    elif command == '/news' or command == '/news@terebas_bot':
         text = 'Новости всякие, разные, интересные.'
-    elif command == '/joke':
+    elif command == '/joke' or command == '/joke@terebas_bot':
         text = joke.get_joke()
     else:
         text = 'Ты че мне ща сказал? А ну повтори.'
