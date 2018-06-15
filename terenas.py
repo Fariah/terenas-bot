@@ -5,7 +5,7 @@ from flask import Flask, request
 from werkzeug.wrappers import Response
 from settings import token, bot, chat_id
 import requests
-import joke, birthday, greet
+import joke, birthday, greet, news
 
 app = Flask(__name__)
 
@@ -36,7 +36,7 @@ def bot_handler():
     elif command == '/greet' or command == '/greet@terebas_bot':
         text = greet.get_greet()
     elif command == '/news' or command == '/news@terebas_bot':
-        text = 'Новости всякие, разные, интересные.'
+        text = news.get_news_list()
     elif command == '/joke' or command == '/joke@terebas_bot':
         text = joke.get_joke()
     else:
