@@ -36,7 +36,7 @@ def bot_handler():
     elif command == '/greet' or command == '/greet@terebas_bot':
         text = greet.get_greet()
     elif command == '/news' or command == '/news@terebas_bot':
-        text = news.get_news_list()
+        text = 'Не здесь и не сейчас, поди прочь'
     elif command == '/joke' or command == '/joke@terebas_bot':
         text = joke.get_joke()
     else:
