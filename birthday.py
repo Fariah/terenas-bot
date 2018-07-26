@@ -18,7 +18,7 @@ def birthdays_list():
         "Лена: 11 декабря": get_wait_days('-12-11')
     }
 
-    sorted_birthdays = sorted(birthdays.items(), key=operator.itemgetter(1))
+    sorted_birthdays = sorted(birthdays.values())
 
     birthdays_string = ""
 
