@@ -18,17 +18,12 @@ def birthdays_list():
         "Лена: 11 декабря": get_wait_days('-12-11')
     }
 
-    sorted_birthdays_keys = sorted(birthdays, key=birthdays.get)
-
-    sorted_birthdays = {}
-
-    for key in sorted_birthdays_keys:
-        sorted_birthdays[key] = birthdays[key]
+    sorted_birthdays = sorted(birthdays.items(), key=lambda x: int(x[1]))
 
     birthdays_string = ""
 
     for key, value in sorted_birthdays:
-        if value == 0:
+        if value == '0':
             birthdays_string += key + " (Ура, день рождения!)\n"
         else:
             birthdays_string += key + " (" + value + " дней осталось)\n"
