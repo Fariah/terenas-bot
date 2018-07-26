@@ -5,7 +5,7 @@ from flask import Flask, request
 from werkzeug.wrappers import Response
 from settings import token, bot, chat_id
 import requests
-import joke, birthday, greet, news
+import joke, birthday, greet
 
 app = Flask(__name__)
 
