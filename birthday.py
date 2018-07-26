@@ -3,6 +3,7 @@
 
 import datetime
 
+
 def birthdays_list():
     birthdays = {
         "Шнибл: 23 марта": '-03-23',
@@ -19,7 +20,7 @@ def birthdays_list():
 
     birthdays_string = ""
 
-    for key, value in birthdays:
+    for key, value in birthdays.items():
         birthdays_string += key + " (" + get_wait_days(value) + " дней осталось)\n"
 
     # birthday_shnible = '-03-23'
