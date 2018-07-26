@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import datetime, operator
+import datetime
 
 
 def birthdays_list():
@@ -18,11 +18,16 @@ def birthdays_list():
         "Лена: 11 декабря": get_wait_days('-12-11')
     }
 
-    sorted_birthdays = sorted(birthdays.values())
+    sorted_birthdays_keys = sorted(birthdays, key=birthdays.get)
+
+    sorted_birthdays = {}
+
+    for key in sorted_birthdays_keys:
+        sorted_birthdays[key] = birthdays[key]
 
     birthdays_string = ""
 
-    for key, value in sorted_birthdays.items():
+    for key, value in sorted_birthdays:
         if value == 0:
             birthdays_string += key + " (Ура, день рождения!)\n"
         else:
