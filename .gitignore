@@ -1,5 +1,6 @@
 vendor/
 venv/
+env/
 .idea/
 node_modules/
 npm-debug.log
