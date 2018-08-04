@@ -38,7 +38,7 @@ def get_wait_days(friend_birthday):
     aa = datetime.date(int(a[0]), int(a[1]), int(a[2]))
     bb = datetime.date.today()
     cc = aa - bb
-    if(cc.days < 0):
+    if cc.days < 0:
         current_year = str(datetime.date.today().year + 1)
         birthday = current_year + friend_birthday
         birthday_a = birthday.split('-')
