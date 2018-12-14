@@ -5,7 +5,7 @@ from flask import Flask, request
 from werkzeug.wrappers import Response
 from settings import token, bot, chat_id
 import requests
-import joke, birthday, greet
+import joke, birthday, greet, database
 
 app = Flask(__name__)
 
@@ -38,7 +38,10 @@ def bot_handler():
     elif command == '/news' or command == '/news@terebas_bot':
         text = 'Не здесь и не сейчас, поди прочь'
     elif command == '/joke' or command == '/joke@terebas_bot':
-        text = joke.get_joke()
+        db = database.Database()
+        jokes = db.list_jokes()
+        joke_object = joke.get_random_joke(jokes)
+        text = joke_object['text_value']
     else:
         text = 'Ты че мне ща сказал? А ну повтори.'
     data = {'chat_id': chat_id, 'text': text, 'disable_notification': 1}
